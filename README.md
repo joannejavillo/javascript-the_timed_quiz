@@ -27,4 +27,11 @@
 
 ![screenshot-of-starting-page](./assets/images/jsmainpage.png)
 - Main page
+![screenshot-of-correct-answer](./assets/images/Correct_answer.png)
+- User input a correct answer
+![screenshot-of-wrong-answer](./assets/images/wrong_answer.png)
+- User input a wrong answer
+![screenshot-of-User's-initial-for-score](./assets/images/Initials_for_score.png)
+- User's initial - score
+![screenshot-of-Highscores](./assets/images/Highscores.png)
 

@@ -25,4 +25,6 @@
 ---
 ## Screenshots of The Timed Quiz
 
+![screenshot-of-starting-page] (.assets/images/JS-The timed quiz.png)
+- Main page
 

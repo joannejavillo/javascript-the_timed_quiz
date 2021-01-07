@@ -20,7 +20,7 @@
 ----
 ## Link of the timed quiz in Github
 
-[Link]
+[Link] (https://joannejavillo.github.io/javascript-the_timed_quiz/)
 
 ---
 ## Screenshots of The Timed Quiz

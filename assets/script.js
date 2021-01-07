@@ -164,7 +164,7 @@ function enterScoreScreen() {
     // to enert initials for the score
     let enterNameElement = document.createElement("p"); 
     let enterNameText = document.createTextNode("Enter your initials: ");   
-    let enterNameAttr = enterNameElement.setAttribute("class", "col-md-4")                   
+    let enterNameAttr = enterNameElement.setAttribute("class", "col-md-3")                   
     enterNameElement.appendChild(enterNameText);                                  
     submissionDiv.appendChild(enterNameElement);
 

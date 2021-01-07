@@ -61,8 +61,7 @@ var timerText = document.getElementById("timer");
 // Number of questions 
 let qLength = questions.length;
 
-// Define iteration counter (i) for renderTitle and renderAnswerButtons's parameter arguments
-// We later update the value of it from within the renderAnswerButtons function using i++ and returning it's value  
+// Define iteration counter (i) for renderTitle and renderAnswerButtons's parameter arguments  
 let i = 0;
 
 // Time limit:  12 seconds per question.
@@ -125,7 +124,7 @@ function renderAnswerButtons(titleIndex) {
         let btnElement = document.createElement("button");
         let btnText = document.createTextNode(btnContent);                      
         
-        // Create an ID attribute for our button. Used for styling.            
+        // Create an ID attribute for our button.          
         btnElement.setAttribute("id", "answer-button");
 
         btnElement.appendChild(btnText);
@@ -137,7 +136,7 @@ function renderAnswerButtons(titleIndex) {
 }
     
 function currentAnswer(titleIndex) {
-    // We subtract one because this function is called after renderAnswerButton is called which does i++
+    
     let answerKeyObj = questions[titleIndex - 1].answer;
     return answerKeyObj;
 }
@@ -208,7 +207,7 @@ function enterScoreScreen() {
     finalScoreElement.appendChild(finalScoreText);                                  
     startPageText.appendChild(finalScoreElement);
 
-    // Make row for input field and submit button to go in
+    
     let submissionContainerElement = document.createElement("div"); 
     let submissionContainerAttrClass = submissionContainerElement.setAttribute("class", "row");
     let submissionContainerAttrId = submissionContainerElement.setAttribute("id", "submit-row");
@@ -256,7 +255,7 @@ function enterScoreScreen() {
     });
 }
 
-// Go through each item in localstorage and make an li for it and display on page
+// Function for the local storage
 function renderHighscores() {
     let orderedList = document.createElement("ol");
     orderedList.setAttribute("id", "ordered-list");

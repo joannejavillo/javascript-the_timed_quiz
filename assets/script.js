@@ -1,20 +1,74 @@
-//declarations of var
+//Declarations of var for questions
+var questions = [
+    {
+        title: "The most popular CSS Framework for developing responsive and mobile-first websites?",
+        choices: ["Bootshoes", "Bootstrap", "Beltstrap", "Bootcamp"],
+        answer: "Bootstrap",
+    },
+    {
+       title: "What does HTML stand for?",
+        choices: ["Hyperlinks and Text Markup Language", "Home Tool Markup Language", "Home Text Markup Language", "Hyper Text Markup Language"],
+        answer: "Hyper Text Markup Language",
+    },
+    {
+        title: "What does CSS stand for?",
+        choices: ["Creative Style Sheets", "Colourful Style Sheets", "Cascading Style Sheets", "Computer Sttyle Sheets"],
+        answer: "Cascading Style Sheets",
+    },
+    {
+        title: "Where is the correct place to insert Javascript?",
+        choices: ["The <body> section", "The <head> section", "Both the <head> and <body> section", "The <footer> section"],
+        answer: "The <body> section",
+    },
+    {
+        title: "How can you add a comment in a Javascript?",
+        choices: ["//This is a comment", "||This is a comment", "<!--This is a comment-->", "&&This is a comment&&"],
+        answer: "//This is a comment"
+    }
+
+];
+
+//function to start start quiz 
+function start(){
+    i = 0
+    score = 0
+    num1 = 60;
+    populate(i);
+    home.style.display = 'none';
+    end.style.display = 'none';
+    hscore.style.display = 'none';
+    ask.style.display = 'block';
+    feedback.innerHTML = "";
+    
+  }
+  
+  //finish div hide question and display end
+  function finish(){
+    ask.style.display = 'none';
+    end.style.display = 'block';
+    playerInput.focus();
+    save.disabled = true;
+    mark.textContent = score;
+        
+  }
+
+//Declarations of var
 var startPageText = document.getElementById("start-page-text");
 var startButton = document.getElementById("start-quiz-button");
 var viewHighscores = document.getElementById("view-highscores")
 var timerText = document.getElementById("timer");
 
-// number of questions 
+// Number of questions 
 let qLength = questions.length;
 
 // Define iteration counter (i) for renderTitle and renderAnswerButtons's parameter arguments
 // We later update the value of it from within the renderAnswerButtons function using i++ and returning it's value  
 let i = 0;
 
-// time limit:  12 seconds per question.
+// Time limit:  12 seconds per question.
 let timer = qLength * 12;
 
-// time variables
+// Time variables
 let timeInterval, timeCheckVal;
 
 //Event listener for start button
@@ -29,7 +83,7 @@ startButton.addEventListener("click", function() {
 
 
 });
-// event listener to view high scores
+// Event listener to view high scores
 viewHighscores.addEventListener("click", function(e) {
     // Keeps page from reloading on click and running through the whole quiz.js again
     e.preventDefault();
@@ -142,7 +196,7 @@ function enterScoreScreen() {
 
     // Make all done text
     let highScoreElement = document.createElement("h2"); 
-    let highScoreText = document.createTextNode("The Quiz is done!");                      
+    let highScoreText = document.createTextNode("Your done!");                      
     highScoreElement.appendChild(highScoreText);                                  
     startPageText.appendChild(highScoreElement);
 
@@ -161,7 +215,7 @@ function enterScoreScreen() {
     startPageText.appendChild(submissionContainerElement);  
     let submissionDiv = document.getElementById("submit-row");
 
-    // to enert initials for the score
+    // Enter initial's user
     let enterNameElement = document.createElement("p"); 
     let enterNameText = document.createTextNode("Enter your initials: ");   
     let enterNameAttr = enterNameElement.setAttribute("class", "col-md-3")                   
@@ -174,7 +228,7 @@ function enterScoreScreen() {
     inputElement.setAttribute("id", "name-input");      
     submissionDiv.appendChild(inputElement);
 
-    // Make submit button
+    // Submit button
     let btnElement = document.createElement("button");
     let btnText = document.createTextNode("Submit");                          
     btnElement.setAttribute("class", "btn btn-primary col-md-3");
@@ -202,7 +256,7 @@ function enterScoreScreen() {
     });
 }
 
-// go through each item in localstorage and make an li for it and display on page
+// Go through each item in localstorage and make an li for it and display on page
 function renderHighscores() {
     let orderedList = document.createElement("ol");
     orderedList.setAttribute("id", "ordered-list");
@@ -219,7 +273,7 @@ function renderHighscores() {
     }
 }
 
-// To view the highscores 
+// View the highscores 
 function viewHighScoresScreen() {
     clearGameArea();
     // Make highscore text
